@@ -1,0 +1,29 @@
+dn: ou=People,dc=example,dc=com
+objectClass: organizationalUnit
+ou: People
+
+dn: ou=Groups,dc=example,dc=com
+objectClass: organizationalUnit
+ou: Groups
+
+dn: cn=group1,ou=Groups,dc=example,dc=com
+objectClass: posixGroup
+cn: group1
+gidNumber: 5000
+
+dn: uid=user1,ou=People,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: user1
+sn: Doe
+givenName: John
+cn: John Doe
+displayName: John Doe
+uidNumber: 10000
+gidNumber: 5000
+userPassword: password1
+gecos: John Doe
+loginShell: /bin/bash
+homeDirectory: /home/john
+
