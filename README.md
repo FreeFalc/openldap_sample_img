@@ -8,15 +8,15 @@
  1. docker build ./ -t openldap
  2. docker run --rm -p 389:389 -d openldap:latest
 
-######Test installation:
+###### Test installation:
 
 ```bash
-\# LDAP admin binding
+# LDAP admin binding
 ldapsearch -x -LLL -H ldap:/// -b dc=example,dc=com dn -D cn=admin,dc=example,dc=com -w password
 ```
 
 ```bash
-\# Regular user binding
+# Regular user binding
 ldapsearch -x -LLL -H ldap:/// -b dc=example,dc=com dn -D uid=user1,ou=People,dc=example,dc=com -w password1
 ```
 
