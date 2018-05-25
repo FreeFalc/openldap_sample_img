@@ -21,6 +21,6 @@ ldapsearch -x -LLL -H ldap:/// -b dc=example,dc=com dn -D uid=user1,ou=People,dc
 ```
 
 ###### Field for improvement:
- Add ability to load records at start time. Some approaches: 
- 1. add volume where files with data stored 
+ Add ability to load records at start time. Some approaches:
+ 1. add volume where files with data stored.
  2. Somehow pass in parameters.
