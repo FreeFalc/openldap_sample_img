@@ -13,7 +13,7 @@ RUN echo "slapd slapd/internal/generated_adminpw password ${LDAP_ROOTPASS}" | de
  && echo "slapd slapd/dump_database_destdir string /var/backups/slapd-VERSION" | debconf-set-selections \
  && echo "slapd slapd/domain string ${LDAP_DOMAIN}" | debconf-set-selections \
  && echo "slapd shared/organization string ${LDAP_ORGANISATION}" | debconf-set-selections \
- && echo "slapd slapd/backend string HDB" | debconf-set-selections \
+ && echo "slapd slapd/backend string MDB" | debconf-set-selections \
  && echo "slapd slapd/purge_database boolean true" | debconf-set-selections \
  && echo "slapd slapd/move_old_database boolean true" | debconf-set-selections \
  && echo "slapd slapd/allow_ldap_v2 boolean false" | debconf-set-selections \
@@ -27,6 +27,4 @@ RUN /etc/init.d/slapd start \
 
 EXPOSE 389
 
-#ENTRYPOINT ["/usr/sbin/slapd"]
 CMD ["/usr/sbin/slapd", "-h", "ldap:///", "-g", "openldap", "-u", "openldap", "-d", "0" ]
-#CMD [ "/usr/sbin/slapd", "-h ldap:/// -u openldap -g openldap -d 0" ]
